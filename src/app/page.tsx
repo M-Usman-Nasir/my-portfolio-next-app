@@ -1,4 +1,7 @@
-export default function Hero() {
+import Hero from "@/components/Hero"
+
+
+export default function Page() {
   return (
     <Hero />
   );
