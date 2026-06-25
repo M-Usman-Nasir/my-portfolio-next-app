@@ -8,12 +8,26 @@ export default {
   ],
   theme: {
     extend: {
-      container : {
+      container: {
         center: true,
-        padding: "15px"
+        padding: "15px",
       },
       colors: {
-        accent: "#08e95e"
+        primary: "#5982f4",
+        dark: "#191f36",
+        muted: "#262840",
+      },
+      fontFamily: {
+        nunito: ["var(--font-nunito)", "sans-serif"],
+      },
+      animation: {
+        float: "float 4s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-24px)" },
+        },
       },
     },
   },
