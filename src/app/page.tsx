@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
+import WhatISolve from "@/components/WhatISolve";
+import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -12,7 +13,8 @@ export default function Page() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <WhatISolve />
+      <TechStack />
       <Projects />
       <Contact />
       <Footer />

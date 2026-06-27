@@ -11,9 +11,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio | Usman Nasir",
+  title: "Usman Nasir | Full-Stack Developer",
   description:
-    "Crafting intuitive, responsive, and performance-driven applications for the web and beyond.",
+    "Full-Stack Developer building production web and mobile systems for healthcare, education, fitness, and property management.",
 };
 
 export default function RootLayout({

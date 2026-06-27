@@ -3,9 +3,19 @@ import { FaAngleUp } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-wrap justify-between items-center px-[5%] md:px-[9%] py-8 bg-muted">
+    <footer className="flex flex-wrap justify-between items-center gap-4 px-[5%] md:px-[9%] py-8 bg-muted">
       <div className="text-[1.6rem]">
         <p>{footer.copyright}</p>
+        {footer.earlyProjectsUrl && (
+          <a
+            href={footer.earlyProjectsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline text-[1.4rem] mt-2 inline-block"
+          >
+            {footer.earlyProjectsLabel}
+          </a>
+        )}
       </div>
       <a
         href={footer.backToTopHref}

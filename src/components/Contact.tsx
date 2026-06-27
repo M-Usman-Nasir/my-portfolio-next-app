@@ -14,12 +14,18 @@ const Contact = () => {
       className="min-h-screen px-[5%] md:px-[9%] py-16"
     >
       <h2
-        className="section-heading mb-12"
+        className="section-heading mb-4"
         data-aos="fade-down"
       >
         {contact.heading}{" "}
         <span>{contact.headingAccent}</span>
       </h2>
+      <p
+        className="text-center text-[1.6rem] text-white/70 mb-12 max-w-[70rem] mx-auto"
+        data-aos="fade-down"
+      >
+        {contact.subtitle}
+      </p>
 
       <form
         onSubmit={handleSubmit}

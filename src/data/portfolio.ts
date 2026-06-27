@@ -1,13 +1,14 @@
 export const site = {
   name: "Usman Nasir",
   logo: "UsmanNasir.dev",
-  title: "Personal Portfolio | Usman Nasir",
+  title: "Usman Nasir | Full-Stack Developer",
 };
 
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "What I Solve", href: "#services" },
+  { label: "Tech Stack", href: "#stack" },
   { label: "Projects", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
@@ -15,14 +16,15 @@ export const navLinks = [
 export const hero = {
   greeting: "Salam, I am",
   name: "Usman Nasir",
-  rolePrefix: "A Passionate",
+  rolePrefix: "I'm a",
   typedStrings: [
     "Full Stack Developer",
-    "Web Designer",
-    "Aalim-E-Deen",
-    "Teacher",
+    "Web Application Architect",
+    "CRM & LMS Builder",
   ],
-  bio: "Crafting intuitive, responsive, and performance-driven applications for the web and beyond.",
+  bio: "Full-Stack Developer building production web and mobile systems for healthcare, education, fitness, and property management.",
+  tagline:
+    "I design backends, role-based dashboards, and mobile companions — from NHS-aligned triage to multi-tenant CRMs.",
   cvPath: "/CV/CV.pdf",
   image: "/images/profiledp1.png",
   imageAlt: "Usman Nasir profile photo",
@@ -59,45 +61,95 @@ export const socialLinks = [
 export const about = {
   heading: "About",
   headingAccent: "Me",
-  subtitle: "Full-Stack Developer | Creative Thinker | Problem Solver",
+  subtitle:
+    "Full-Stack Developer shipping production systems for clients across the UK, UAE, and beyond.",
   description:
-    "I specialize in creating seamless, scalable, and secure web experiences. My passion lies in transforming challenges into elegant solutions with clean, maintainable code.",
+    "I build full-stack web applications, CRMs, learning platforms, PWAs, and mobile companions — systems that handle real users, real data, and real business operations. I focus on clean architecture, role-based access control, and scalable APIs that teams can maintain long-term. My client work spans Healthcare, EdTech, FinTech, Fitness, and PropTech.",
+  highlights: [
+    "6+ production systems delivered for clients across multiple industries",
+    "Web + mobile delivery — dashboards, APIs, and companion apps",
+    "Role-based platforms built for healthcare, education, fitness, and property",
+  ],
   image: "/images/aboutpic1.png",
   imageAlt: "Usman coding at desk",
-  ctaLabel: "More About Me",
-  ctaHref: "#about",
+  ctaLabel: "View My Work",
+  ctaHref: "#portfolio",
 };
 
-export const services = {
-  heading: "My",
-  headingAccent: "Services",
+export const whatISolve = {
+  heading: "What I",
+  headingAccent: "Solve",
   items: [
     {
-      icon: "code",
-      title: "Web Development",
-      description:
-        "From landing pages to full-stack applications, I build digital products with performance and scalability in mind.",
+      icon: "healthcare",
+      title: "Healthcare Systems",
+      problem:
+        "Patient triage, auditable routing, and regulated workflows without unreliable AI diagnosis.",
+      relatedProject: "Aegis Health — Digital Triage",
     },
     {
-      icon: "palette",
-      title: "UI/UX Design",
-      description:
-        "Designing intuitive interfaces that create seamless interactions and delightful user experiences.",
+      icon: "enterprise",
+      title: "Enterprise Web Platforms",
+      problem:
+        "High-traffic public websites that serve large audiences with rich content and performance.",
+      relatedProject: "Aldar — Real Estate Website",
     },
     {
-      icon: "android",
-      title: "App Development",
-      description:
-        "Developing responsive applications to meet today's user demands across platforms.",
+      icon: "edtech",
+      title: "EdTech & Multi-Role Apps",
+      problem:
+        "Learning platforms with separate student, mentor, and admin flows backed by real databases.",
+      relatedProject: "APEX AI Systems — LMS",
+    },
+    {
+      icon: "crm",
+      title: "Operations CRM + Mobile",
+      problem:
+        "End-to-end business management replacing spreadsheets — web CRM plus member and staff apps.",
+      relatedProject: "Fitness Suite CRM",
+    },
+    {
+      icon: "property",
+      title: "Property & RBAC Platforms",
+      problem:
+        "Apartment and residential management with role-based access for residents and staff.",
+      relatedProject: "Homeland Union",
     },
   ],
 };
 
-export type ProjectStatus = "live" | "demo-on-request" | "coming-soon";
+export const techStack = {
+  heading: "Tech",
+  headingAccent: "Stack",
+  intro: "Technologies I use to deliver production systems.",
+  categories: [
+    {
+      label: "Frontend",
+      items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    },
+    {
+      label: "Backend",
+      items: ["Node.js", "PHP/Laravel", "PostgreSQL", "Prisma", "REST APIs", "JWT"],
+    },
+    {
+      label: "Mobile & PWA",
+      items: ["React Native", "PWA", "Responsive Web"],
+    },
+    {
+      label: "Domains",
+      items: ["Healthcare", "EdTech", "FinTech", "CRM", "PropTech"],
+    },
+  ],
+};
+
+export type ProjectStatus = "live" | "coming-soon";
 
 export interface ProjectItem {
   title: string;
   description: string;
+  problem?: string;
+  outcome?: string;
+  domain?: string;
   image?: string;
   url?: string;
   status: ProjectStatus;
@@ -107,163 +159,144 @@ export interface ProjectItem {
 }
 
 export const projects = {
-  heading: "My",
-  headingAccent: "Projects",
+  heading: "Proof of",
+  headingAccent: "Delivery",
 };
 
 export const clientProjects = {
-  heading: "Featured",
-  headingAccent: "Client Work",
+  heading: "Production systems",
+  headingAccent: "built for clients",
   items: [
     {
       title: "Aegis Health — Digital Triage",
       description:
-        "NHS-aligned digital triage with structured symptom questionnaires and a deterministic, rule-based decision engine. Patients are guided to self-care, pharmacy, GP, urgent care, or emergency (999) with auditable logic.",
+        "NHS-aligned digital triage with structured symptom questionnaires and a deterministic, rule-based decision engine.",
+      problem:
+        "Clinics needed NHS-aligned triage without unreliable AI diagnosis.",
+      outcome:
+        "Shipped rule-based routing to self-care, pharmacy, GP, urgent, or 999 — web + patient app.",
+      domain: "Healthcare",
       image: "/images/aegis-health.png",
       url: "https://nhs-triage-8i7r.vercel.app/",
       status: "live" as ProjectStatus,
-      stack: ["Next.js", "Rule Engine", "Healthcare"],
+      stack: ["Next.js", "TypeScript", "Mobile"],
       scope: "Web + 1 patient mobile app",
     },
     {
       title: "Aldar — Real Estate Website",
       description:
-        "Enterprise real estate public website for Abu Dhabi residents — a high-traffic, content-rich property platform serving buyers, renters, and investors.",
+        "Enterprise real estate public website for Abu Dhabi residents.",
+      problem:
+        "A major developer needed a high-traffic public platform for buyers, renters, and investors.",
+      outcome:
+        "Delivered a content-rich enterprise website serving the Abu Dhabi property market.",
+      domain: "Enterprise",
       image: "/images/al-daar.png",
       url: "https://www.aldar.com/en",
       status: "live" as ProjectStatus,
-      stack: ["Enterprise Web", "Real Estate"],
+      stack: ["Enterprise Web", "CMS", "Performance"],
       scope: "Public enterprise website",
     },
     {
       title: "APEX AI Systems — LMS",
       description:
-        "Full-stack Learning Management System with student, mentor, and admin flows. PostgreSQL APIs power expert-led courses and industry-recognized AI certifications.",
+        "Full-stack Learning Management System with student, mentor, and admin flows.",
+      problem:
+        "An AI education company needed a multi-role LMS with course delivery and certifications.",
+      outcome:
+        "Built Next.js + PostgreSQL platform with JWT auth and role-separated dashboards.",
+      domain: "EdTech",
       image: "/images/apex-ai.png",
       url: "https://mentors-d6g6e8m3x-usmans-projects-11ea568f.vercel.app/",
-      status: "demo-on-request" as ProjectStatus,
+      status: "live" as ProjectStatus,
       stack: ["Next.js", "PostgreSQL", "Prisma", "JWT"],
       scope: "Full-stack LMS",
     },
     {
       title: "Crypto Market Hub",
       description:
-        "The Next Gen Crypto Terminal — institutional-grade market intelligence with real prices, live trends, and a futuristic interface built for clarity.",
+        "Real-time crypto market terminal with institutional-grade intelligence.",
+      problem:
+        "Traders needed live market data without cluttered, noisy interfaces.",
+      outcome:
+        "Shipped a real-time terminal with live prices, trends, and a focused futuristic UI.",
+      domain: "FinTech",
       image: "/images/crypto.png",
       url: "https://crypto-market-hub.onrender.com/",
       status: "live" as ProjectStatus,
-      stack: ["React", "FinTech", "Live Data"],
+      stack: ["React", "REST APIs", "WebSockets"],
       scope: "Real-time market terminal",
     },
     {
       title: "Fitness Suite CRM",
       description:
-        "Comprehensive fitness business management: members, workouts, nutrition, appointments, challenges, and business analytics for gym operations.",
+        "Comprehensive gym business management from members to analytics.",
+      problem:
+        "Gym owners needed one system to replace spreadsheets and disconnected tools.",
+      outcome:
+        "Delivered web CRM plus member and coach mobile apps for full operations.",
+      domain: "CRM",
       image: "/images/fitness-crm.png",
       url: "https://phpstack-1542257-6177868.cloudwaysapps.com/login",
-      status: "demo-on-request" as ProjectStatus,
-      stack: ["PHP", "CRM", "Mobile"],
+      status: "live" as ProjectStatus,
+      stack: ["PHP", "Laravel", "MySQL", "Mobile"],
       scope: "Web + 2 mobile apps",
     },
     {
       title: "Homeland Union",
       description:
-        "Progressive Web Application for apartment and residential complex management with role-based access control for residents and staff.",
+        "PWA for apartment and residential complex management.",
+      problem:
+        "Property managers needed resident portals with strict role-based access.",
+      outcome:
+        "Built PWA with RBAC plus a mobile app with role-specific features.",
+      domain: "PropTech",
       image: "/images/homeland-union.png",
       url: "https://myunionoffice.co/login",
-      status: "demo-on-request" as ProjectStatus,
-      stack: ["PWA", "RBAC", "Property Mgmt"],
+      status: "live" as ProjectStatus,
+      stack: ["PWA", "RBAC", "React", "Mobile"],
       scope: "PWA + 1 mobile app",
     },
   ] satisfies ProjectItem[],
 };
 
 export const personalProjects = {
-  heading: "Personal",
-  headingAccent: "Projects",
+  heading: "In",
+  headingAccent: "development",
+  subtitle: "Products in development — separate from client work",
   items: [
     {
       title: "X-Momentum — Fitness Suite CRM",
       description:
-        "A comprehensive fitness business management system for gym operations — member management, workout planning, nutrition tracking, appointments, challenges, and analytics.",
+        "My own fitness business management product — member management, workouts, nutrition, appointments, and analytics.",
+      problem:
+        "Building a proprietary fitness CRM as a standalone product offering.",
+      outcome: "Web + member and coach mobile apps — launching soon.",
+      domain: "CRM",
       status: "coming-soon" as ProjectStatus,
-      stack: ["Full-Stack", "CRM", "Mobile"],
+      stack: ["Next.js", "PostgreSQL", "Mobile"],
       scope: "Web + 2 mobile apps (member & coach)",
     },
     {
       title: "Student Management System (SMS)",
       description:
-        "Monorepo blueprint for administrative tasks, record-keeping, scheduling, and communications for schools, colleges, universities, and Madaris.",
+        "Monorepo blueprint for schools, colleges, universities, and Madaris.",
+      problem:
+        "Educational institutions need unified admin, records, and communications.",
+      outcome: "Multi-institution platform blueprint — in progress.",
+      domain: "EdTech",
       status: "coming-soon" as ProjectStatus,
-      stack: ["Monorepo", "Education", "Admin"],
+      stack: ["Monorepo", "Node.js", "PostgreSQL"],
       scope: "Multi-institution platform",
     },
   ] satisfies ProjectItem[],
 };
 
-export const learningProjects = {
-  heading: "Learning",
-  headingAccent: "Projects",
-  subtitle: "Early JavaScript projects",
-  items: [
-    {
-      title: "BMI Calculator",
-      description: "Helps assess body weight health relative to height.",
-      image: "/images/1.jpg",
-      url: "https://m-usman-nasir.github.io/BMI_Calculator-JS_Project/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "Calculator",
-      description:
-        "A device for mathematical processes such as adding, subtracting, dividing and multiplying numbers.",
-      image: "/images/2.png",
-      url: "https://m-usman-nasir.github.io/Calculator-JS_Project/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "Easy Quiz App",
-      description:
-        "Allows users to answer a series of questions on various topics.",
-      image: "/images/3.png",
-      url: "https://m-usman-nasir.github.io/Easy_Quiz_App-JS_Project/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "Random Password Generator",
-      description:
-        "Creates strong, unique passwords by combining random letters, numbers, and special characters.",
-      image: "/images/4.png",
-      url: "https://m-usman-nasir.github.io/Random_Password_Generator-/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "To-Do List App",
-      description:
-        "Helps users organize and manage tasks by creating and tracking to-do lists.",
-      image: "/images/5.png",
-      url: "https://m-usman-nasir.github.io/ToDo_List_App-JS_Project/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "Analog Clock",
-      description:
-        "A clock face with hour and minute hands rotating clockwise to show the time.",
-      image: "/images/6.png",
-      url: "https://m-usman-nasir.github.io/Analog_Local_Clock_App-JS_Project/",
-      status: "live" as ProjectStatus,
-      stack: ["JavaScript", "HTML", "CSS"],
-    },
-  ] satisfies ProjectItem[],
-};
 export const contact = {
   heading: "Get in",
   headingAccent: "Touch",
+  subtitle:
+    "Available for full-stack contracts, product builds, and technical consulting.",
   fields: {
     fullName: "Full Name",
     email: "Email Address",
@@ -275,6 +308,8 @@ export const contact = {
 };
 
 export const footer = {
-  copyright: "© 2025 Usman Nasir. All rights reserved.",
+  copyright: "© 2026 Usman Nasir. All rights reserved.",
   backToTopHref: "#home",
+  earlyProjectsUrl: "https://github.com/M-Usman-Nasir",
+  earlyProjectsLabel: "Early JavaScript projects on GitHub",
 };

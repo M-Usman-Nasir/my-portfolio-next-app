@@ -39,10 +39,6 @@
     @apply inline-block px-3 py-1 rounded-full text-[1.2rem] font-semibold bg-green-500/20 text-green-400 border border-green-500/40;
   }
 
-  .badge-demo {
-    @apply inline-block px-3 py-1 rounded-full text-[1.2rem] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/40;
-  }
-
   .badge-soon {
     @apply inline-block px-3 py-1 rounded-full text-[1.2rem] font-semibold bg-white/10 text-white/70 border border-white/20;
   }

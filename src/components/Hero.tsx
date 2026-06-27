@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Typed from "typed.js";
 import { hero, socialLinks } from "@/data/portfolio";
 import {
   FaFacebookF,
@@ -26,15 +25,21 @@ const Hero = () => {
   useEffect(() => {
     if (!typedRef.current) return;
 
-    const typed = new Typed(typedRef.current, {
-      strings: hero.typedStrings,
-      typeSpeed: 70,
-      backSpeed: 70,
-      backDelay: 1000,
-      loop: true,
+    let typedInstance: { destroy: () => void } | undefined;
+
+    void import("typed.js").then(({ default: Typed }) => {
+      if (!typedRef.current) return;
+
+      typedInstance = new Typed(typedRef.current, {
+        strings: hero.typedStrings,
+        typeSpeed: 70,
+        backSpeed: 70,
+        backDelay: 1000,
+        loop: true,
+      });
     });
 
-    return () => typed.destroy();
+    return () => typedInstance?.destroy();
   }, []);
 
   return (
@@ -59,6 +64,7 @@ const Hero = () => {
           </span>
         </h3>
         <p className="text-[1.6rem] mb-4">{hero.bio}</p>
+        <p className="text-[1.5rem] text-white/80 mb-4">{hero.tagline}</p>
 
         <div className="flex justify-center md:justify-start gap-4 my-8">
           {socialLinks.map((social) => {
