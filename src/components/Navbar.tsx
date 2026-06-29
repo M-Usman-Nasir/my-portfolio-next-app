@@ -1,32 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/data/portfolio";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
-
-      const scrollY = window.scrollY;
-      const sections = document.querySelectorAll("section[id]");
-
-      sections.forEach((section) => {
-        const el = section as HTMLElement;
-        const offset = el.offsetTop - 150;
-        const height = el.offsetHeight;
-        const id = section.getAttribute("id");
-
-        if (id && scrollY >= offset && scrollY < offset + height) {
-          setActiveSection(id);
-        }
-      });
-
       setMenuOpen(false);
     };
 
@@ -36,7 +23,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <header
@@ -44,9 +40,9 @@ const Navbar = () => {
         isSticky ? "bg-dark shadow-lg shadow-black/20" : "bg-dark"
       }`}
     >
-      <a href="#home" className="text-[2.5rem] font-bold text-white">
+      <Link href="/" className="text-[2.5rem] font-bold text-white">
         {site.logo}
-      </a>
+      </Link>
 
       <button
         type="button"
@@ -60,27 +56,22 @@ const Navbar = () => {
       <nav
         className={`${
           menuOpen
-            ? "block absolute top-full left-0 w-full px-[3%] py-4 bg-dark border-t border-black/20 shadow-lg"
+            ? "block absolute top-full left-0 w-full px-[3%] py-4 bg-dark border-t border-black/20 shadow-lg max-h-[70vh] overflow-y-auto"
             : "hidden"
-        } md:block md:static md:w-auto md:p-0 md:border-0 md:shadow-none`}
+        } md:block md:static md:w-auto md:p-0 md:border-0 md:shadow-none md:max-h-none md:overflow-visible`}
       >
-        {navLinks.map((link) => {
-          const sectionId = link.href.replace("#", "");
-          const isActive = activeSection === sectionId;
-
-          return (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`menuLink block md:inline-block md:ml-16 ${
-                isActive ? "active" : ""
-              }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          );
-        })}
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`menuLink block md:inline-block md:ml-8 lg:ml-12 ${
+              isActive(link.href) ? "active" : ""
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {link.label}
+          </Link>
+        ))}
       </nav>
     </header>
   );

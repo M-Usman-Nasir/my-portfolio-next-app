@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { about } from "@/data/portfolio";
 
@@ -35,9 +36,9 @@ const About = () => {
             </li>
           ))}
         </ul>
-        <a href={about.ctaHref} className="btn-primary">
+        <Link href={about.ctaHref} className="btn-primary">
           {about.ctaLabel}
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -1,12 +1,16 @@
 "use client";
 
 import { FormEvent } from "react";
-import { contact } from "@/data/portfolio";
+import { contact, socialLinks } from "@/data/portfolio";
+import { FaEnvelope, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const Contact = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
+
+  const linkedIn = socialLinks.find((s) => s.icon === "linkedin");
+  const github = socialLinks.find((s) => s.icon === "github");
 
   return (
     <section
@@ -26,6 +30,43 @@ const Contact = () => {
       >
         {contact.subtitle}
       </p>
+
+      <div
+        className="flex flex-wrap justify-center gap-8 mb-12"
+        data-aos="fade-up"
+      >
+        {contact.email && (
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center gap-3 text-[1.6rem] text-white hover:text-primary transition-colors"
+          >
+            <FaEnvelope className="text-[2.4rem] text-primary" />
+            {contact.email}
+          </a>
+        )}
+        {linkedIn && (
+          <a
+            href={linkedIn.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-[1.6rem] text-white hover:text-primary transition-colors"
+          >
+            <FaLinkedinIn className="text-[2.4rem] text-primary" />
+            LinkedIn
+          </a>
+        )}
+        {github && (
+          <a
+            href={github.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-[1.6rem] text-white hover:text-primary transition-colors"
+          >
+            <FaGithub className="text-[2.4rem] text-primary" />
+            GitHub
+          </a>
+        )}
+      </div>
 
       <form
         onSubmit={handleSubmit}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { whatISolve } from "@/data/portfolio";
 import {
   FaBuilding,
@@ -41,9 +42,9 @@ const WhatISolve = () => {
               <p className="text-[1.3rem] text-primary/80 mb-6">
                 e.g. {item.relatedProject}
               </p>
-              <a href="#portfolio" className="btn-primary">
+              <Link href="/projects" className="btn-primary">
                 See Projects
-              </a>
+              </Link>
             </div>
           );
         })}

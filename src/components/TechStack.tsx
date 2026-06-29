@@ -3,7 +3,7 @@ import { techStack } from "@/data/portfolio";
 const TechStack = () => {
   return (
     <section
-      id="stack"
+      id="skills"
       className="min-h-screen px-[5%] md:px-[9%] py-16 bg-muted"
     >
       <h2 className="section-heading mb-4" data-aos="fade-down">
