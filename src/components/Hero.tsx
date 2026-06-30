@@ -21,16 +21,19 @@ const socialIconMap = {
 
 const Hero = () => {
   const typedRef = useRef<HTMLSpanElement>(null);
+  const typedInstanceRef = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
-    if (!typedRef.current) return;
+    const el = typedRef.current;
+    if (!el) return;
 
-    let typedInstance: { destroy: () => void } | undefined;
+    let cancelled = false;
 
     void import("typed.js").then(({ default: Typed }) => {
-      if (!typedRef.current) return;
+      if (cancelled || !typedRef.current) return;
 
-      typedInstance = new Typed(typedRef.current, {
+      typedInstanceRef.current?.destroy();
+      typedInstanceRef.current = new Typed(typedRef.current, {
         strings: hero.typedStrings,
         typeSpeed: 70,
         backSpeed: 70,
@@ -39,7 +42,12 @@ const Hero = () => {
       });
     });
 
-    return () => typedInstance?.destroy();
+    return () => {
+      cancelled = true;
+      typedInstanceRef.current?.destroy();
+      typedInstanceRef.current = null;
+      el.innerHTML = "";
+    };
   }, []);
 
   return (
