@@ -57,7 +57,7 @@ const ProjectsPage = () => {
             className={`px-5 py-2 rounded-full text-[1.4rem] font-semibold border-2 transition-colors duration-300 ${
               filter === tab.id
                 ? "border-primary bg-primary/20 text-primary"
-                : "border-white/20 text-white/80 hover:border-primary/50"
+                : "border-gray-300 dark:border-white/20 text-dark/80 dark:text-white/80 hover:border-primary/50"
             }`}
           >
             {tab.label}

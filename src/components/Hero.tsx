@@ -64,7 +64,7 @@ const Hero = () => {
           </span>
         </h3>
         <p className="text-[1.6rem] mb-4">{hero.bio}</p>
-        <p className="text-[1.5rem] text-white/80 mb-4">{hero.tagline}</p>
+        <p className="text-[1.5rem] text-dark/80 dark:text-white/80 mb-4">{hero.tagline}</p>
 
         <div className="flex justify-center md:justify-start gap-4 my-8">
           {socialLinks.map((social) => {
@@ -84,7 +84,7 @@ const Hero = () => {
           })}
         </div>
 
-        <a href={hero.cvPath} className="btn-primary" download>
+        <a href={hero.cvPath} className="btn-primary" download target="_blank" rel="noopener noreferrer">
           Download CV
         </a>
       </div>

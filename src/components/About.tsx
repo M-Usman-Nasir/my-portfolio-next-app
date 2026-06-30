@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col md:flex-row justify-center items-center gap-8 px-[5%] md:px-[9%] py-16 bg-muted"
+      className="min-h-screen flex flex-col md:flex-row justify-center items-center gap-8 px-[5%] md:px-[9%] py-16 bg-gray-100 dark:bg-muted"
     >
       <div className="flex-1 flex justify-center" data-aos="fade-right">
         <Image
@@ -29,7 +29,7 @@ const About = () => {
           {about.highlights.map((item) => (
             <li
               key={item}
-              className="flex items-start gap-3 text-[1.5rem] text-white/90"
+              className="flex items-start gap-3 text-[1.5rem] text-dark/90 dark:text-white/90"
             >
               <span className="text-primary mt-1">▸</span>
               {item}

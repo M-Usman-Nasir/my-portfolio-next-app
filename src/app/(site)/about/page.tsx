@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
+import { about } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "About | Usman Nasir",
+  title: "About",
+  description: about.subtitle,
 };
 
 export default function AboutPage() {

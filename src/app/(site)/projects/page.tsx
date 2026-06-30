@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import ProjectsPage from "@/components/ProjectsPage";
+import { clientProjects } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "Projects | Usman Nasir",
+  title: "Projects",
+  description: clientProjects.subtitle,
 };
 
 export default function ProjectsRoutePage() {

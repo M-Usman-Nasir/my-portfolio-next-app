@@ -4,14 +4,14 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="min-h-screen px-[5%] md:px-[9%] py-16 bg-muted"
+      className="min-h-screen px-[5%] md:px-[9%] py-16 bg-gray-100 dark:bg-muted"
     >
       <h2 className="section-heading mb-4" data-aos="fade-down">
         {experience.heading}{" "}
         <span>{experience.headingAccent}</span>
       </h2>
       <p
-        className="text-center text-[1.6rem] text-white/70 mb-16 max-w-3xl mx-auto"
+        className="text-center text-[1.6rem] text-dark/70 dark:text-white/70 mb-16 max-w-3xl mx-auto"
         data-aos="fade-down"
       >
         {experience.subtitle}
@@ -21,7 +21,7 @@ const Experience = () => {
         {experience.items.map((item, index) => (
           <div
             key={`${item.company}-${item.period}`}
-            className="bg-dark p-8 rounded-[2rem] border-2 border-dark hover:border-primary transition-colors duration-300"
+            className="bg-white dark:bg-dark p-8 rounded-[2rem] border-2 border-gray-200 dark:border-dark hover:border-primary transition-colors duration-300"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
@@ -30,7 +30,7 @@ const Experience = () => {
               {item.company} · {item.period}
             </p>
             {item.location && (
-              <p className="text-[1.4rem] text-white/60 mb-4">{item.location}</p>
+              <p className="text-[1.4rem] text-dark/60 dark:text-white/60 mb-4">{item.location}</p>
             )}
 
             {item.workedOn && item.workedOn.length > 0 && (
@@ -40,7 +40,7 @@ const Experience = () => {
                   {item.workedOn.map((area) => (
                     <li
                       key={area}
-                      className="flex items-start gap-3 text-[1.4rem] text-white/90"
+                      className="flex items-start gap-3 text-[1.4rem] text-dark/90 dark:text-white/90"
                     >
                       <span className="text-primary mt-1 shrink-0">▸</span>
                       {area}
@@ -55,7 +55,7 @@ const Experience = () => {
                 {item.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex items-start gap-3 text-[1.4rem] text-white/90"
+                    className="flex items-start gap-3 text-[1.4rem] text-dark/90 dark:text-white/90"
                   >
                     <span className="text-primary mt-1 shrink-0">▸</span>
                     {highlight}

@@ -1,37 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohammad Usman Nasir — Portfolio (Next.js)
 
-## Getting Started
+Static portfolio site deployable on Vercel.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router)
+- TypeScript, Tailwind CSS
+- Web3Forms (contact form, no backend)
+- Vercel Analytics
+
+## Setup
 
 ```bash
+npm install
+cp .env.example .env.local
+# Set NEXT_PUBLIC_SITE_URL and Web3Forms key in .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | Production URL (e.g. `https://usmannasir.vercel.app`) — used for Open Graph and SEO |
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | Web3Forms access key ([web3forms.com](https://web3forms.com)) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` for local development. On Vercel, add both variables in **Project → Settings → Environment Variables**.
 
-## Learn More
+Restrict your Web3Forms key to your production domain in the Web3Forms dashboard after deploy.
 
-To learn more about Next.js, take a look at the following resources:
+## Brand assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Placeholder logos and social preview images live in [`public/brand/`](public/brand/). Replace them with final designs without changing code paths. See `public/brand/README.md` for dimensions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel)
 
-## Deploy on Vercel
+1. Push to GitHub and import the repo at [vercel.com/new](https://vercel.com/new).
+2. Set `NEXT_PUBLIC_SITE_URL=https://usmannasir.vercel.app` (or your custom domain).
+3. Set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`.
+4. In **Settings → Domains**, add `usmannasir.vercel.app` and set it as primary.
+5. Confirm `public/CV/CV.pdf` is in the repo for CV download.
+6. After deploy, test:
+   - Contact form
+   - `/CV/CV.pdf`
+   - Theme toggle
+   - Share preview on [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) or [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# my-portfolio-next-app" 
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run start` — serve production build

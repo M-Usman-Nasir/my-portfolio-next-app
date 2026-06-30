@@ -34,11 +34,11 @@ const WhatISolve = () => {
           return (
             <div
               key={item.title}
-              className="bg-muted p-8 pb-12 rounded-[2rem] border-2 border-dark transition-all duration-500 hover:border-primary hover:scale-[1.02]"
+              className="bg-gray-100 dark:bg-muted p-8 pb-12 rounded-[2rem] border-2 border-gray-200 dark:border-dark transition-all duration-500 hover:border-primary hover:scale-[1.02]"
             >
               <Icon className="text-[5rem] text-primary mb-4" />
               <h3 className="text-[2.2rem] font-bold mb-3">{item.title}</h3>
-              <p className="text-[1.5rem] mb-4 text-white/90">{item.problem}</p>
+              <p className="text-[1.5rem] mb-4 text-dark/90 dark:text-white/90">{item.problem}</p>
               <p className="text-[1.3rem] text-primary/80 mb-6">
                 e.g. {item.relatedProject}
               </p>

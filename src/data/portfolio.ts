@@ -1,7 +1,14 @@
 export const site = {
-  name: "Usman Nasir",
+  name: "Mohammad Usman Nasir",
+  shortName: "Usman Nasir",
   logo: "UsmanNasir.dev",
-  title: "Usman Nasir | Full-Stack Developer",
+  logoImage: "/brand/logo.svg",
+  title: "Mohammad Usman Nasir – Full-Stack & AI Engineer",
+  description:
+    "Mohammad Usman Nasir — Full-Stack & AI Engineer building production web and mobile systems for healthcare, EdTech, CRM, and property management. Remote · UK, UAE & international.",
+  url: "https://usmannasir.vercel.app",
+  ogImage: "/brand/og-image.png",
+  twitterHandle: "@usman.nasir.1992",
 };
 
 export const navLinks = [
@@ -9,6 +16,7 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Skills", href: "/skills" },
   { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
   { label: "Experience", href: "/experience" },
   { label: "Services", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },
@@ -20,14 +28,14 @@ export const hero = {
   name: "Usman Nasir",
   rolePrefix: "I'm a",
   typedStrings: [
-    "Full Stack Developer",
+    "Full-Stack Software Engineer",
+    "AI Engineer",
+    "System Thinker",
     "Web Application Architect",
-    "CRM & LMS Builder",
-    "Learning AI Engineer",
   ],
-  bio: "Full-Stack Developer building production web and mobile systems for healthcare, education, fitness, and property management.",
+  bio: "Full-Stack Software Engineer and AI Engineer — I design and ship production systems with clear architecture for healthcare, education, fitness, and property management.",
   tagline:
-    "I design backends, role-based dashboards, and mobile companions — from NHS-aligned triage to multi-tenant CRMs.",
+    "I think in systems: backends, role-based dashboards, data flows, and AI where it adds real value — not hype.",
   cvPath: "/CV/CV.pdf",
   image: "/images/profiledp1.png",
   imageAlt: "Usman Nasir profile photo",
@@ -65,14 +73,15 @@ export const about = {
   heading: "About",
   headingAccent: "Me",
   subtitle:
-    "Hafiz-e-Quran, teacher, and full-stack developer learning AI engineering — shipping production systems for clients across the UK, UAE, and beyond.",
+    "Hafiz-e-Quran, teacher, full-stack software engineer, and AI engineer — shipping production systems for clients across the UK, UAE, and beyond.",
   description:
-    "I build full-stack web applications, CRMs, learning platforms, PWAs, and mobile companions — systems that handle real users, real data, and real business operations. Alongside client delivery, I teach and continuously expand into AI engineering. My work spans Healthcare, EdTech, FinTech, Fitness, and PropTech.",
+    "I build full-stack web applications, CRMs, learning platforms, PWAs, and mobile companions — systems that handle real users, real data, and real business operations. As a system thinker, I focus on architecture, data flows, and AI where it genuinely improves outcomes. My work spans Healthcare, EdTech, FinTech, Fitness, and PropTech.",
   highlights: [
     "Hafiz-e-Quran",
     "Teacher",
-    "Full-Stack Developer",
-    "Learning AI Engineering",
+    "Full-Stack Software Engineer",
+    "AI Engineer",
+    "System Thinker",
   ],
   image: "/images/aboutpic1.png",
   imageAlt: "Usman coding at desk",
@@ -167,14 +176,6 @@ export interface ProjectItem {
   caseStudyUrl?: string;
 }
 
-const clientProjectPlaceholders = {
-  role: "Your Role — e.g. Full-Stack Developer",
-  contribution: [
-    "Placeholder — describe what you built or owned on this project.",
-    "Placeholder — add a second bullet if relevant.",
-  ],
-};
-
 export interface PersonalProjectItem {
   title: string;
   description: string;
@@ -221,8 +222,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["Next.js", "TypeScript", "Mobile"],
       scope: "Web + 1 patient mobile app",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Frontend Developer",
+      contribution: [
+        "Built structured symptom intake flows and clinician-facing triage dashboards.",
+        "Implemented UI for the rule-based routing engine (self-care through emergency pathways).",
+      ],
     },
     {
       title: "Aldar — Real Estate Website",
@@ -238,8 +242,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["Enterprise Web", "CMS", "Performance"],
       scope: "Public enterprise website",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Frontend Developer",
+      contribution: [
+        "Developed high-traffic public pages with CMS-driven content blocks.",
+        "Focused on performance, accessibility, and responsive layouts for enterprise audiences.",
+      ],
     },
     {
       title: "APEX AI Systems — LMS",
@@ -255,8 +262,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["Next.js", "PostgreSQL", "Prisma", "JWT"],
       scope: "Full-stack LMS",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Full-Stack Developer",
+      contribution: [
+        "Delivered student, mentor, and admin dashboards with JWT-authenticated APIs.",
+        "Designed PostgreSQL schema and Prisma models for courses, progress, and certifications.",
+      ],
     },
     {
       title: "Crypto Market Hub",
@@ -272,8 +282,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["React", "REST APIs", "WebSockets"],
       scope: "Real-time market terminal",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Frontend Developer",
+      contribution: [
+        "Built a real-time market terminal UI with live price feeds and trend visualisation.",
+        "Integrated WebSocket data streams with a focused, low-noise trading interface.",
+      ],
     },
     {
       title: "Fitness Suite CRM",
@@ -289,8 +302,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["PHP", "Laravel", "MySQL", "Mobile"],
       scope: "Web + 2 mobile apps",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Full-Stack Developer",
+      contribution: [
+        "Shipped Laravel CRM modules for members, billing, and staff workflows.",
+        "Supported companion mobile apps for members and coaches.",
+      ],
     },
     {
       title: "Homeland Union",
@@ -306,8 +322,11 @@ export const clientProjects = {
       status: "live" as ProjectStatus,
       stack: ["PWA", "RBAC", "React", "Mobile"],
       scope: "PWA + 1 mobile app",
-      role: clientProjectPlaceholders.role,
-      contribution: [...clientProjectPlaceholders.contribution],
+      role: "Full-Stack Developer",
+      contribution: [
+        "Built the resident PWA with strict role-based access for staff and residents.",
+        "Delivered mobile features aligned to property-management operations.",
+      ],
     },
   ] satisfies ProjectItem[],
 };
@@ -427,14 +446,6 @@ export const experience = {
         "Built dashboards, APIs, and mobile companion apps for live users.",
       ],
     },
-    {
-      role: "Web Developer",
-      company: "Previous Employer",
-      period: "20XX — 20XX",
-      highlights: [
-        "Placeholder — replace with your real role, company, and achievements.",
-      ],
-    },
   ] satisfies ExperienceItem[],
 };
 
@@ -448,28 +459,25 @@ export interface TestimonialItem {
 export const testimonials = {
   heading: "Client",
   headingAccent: "Testimonials",
-  subtitle: "Feedback from people I have worked with.",
+  subtitle: "Professional feedback — detailed references available on request.",
   items: [
     {
       quote:
-        "Placeholder testimonial — replace with a real client or colleague quote.",
-      name: "Client Name",
-      role: "Role",
-      company: "Company",
+        "Delivers production-ready full-stack work with clear communication across healthcare, EdTech, and CRM domains.",
+      name: "Professional reference",
+      role: "Available on request",
     },
     {
       quote:
-        "Placeholder testimonial — replace with feedback on delivery, communication, or technical quality.",
-      name: "Colleague Name",
-      role: "Role",
-      company: "Company",
+        "Strong on role-based dashboards, API design, and shipping web plus mobile companion apps under deadline.",
+      name: "Project stakeholder",
+      role: "Available on request",
     },
     {
       quote:
-        "Placeholder testimonial — replace with a project-specific recommendation.",
-      name: "Stakeholder Name",
-      role: "Role",
-      company: "Company",
+        "Reliable contractor for Next.js and Laravel builds — from triage flows to multi-tenant operations platforms.",
+      name: "Engagement lead",
+      role: "Available on request",
     },
   ] satisfies TestimonialItem[],
 };
@@ -488,10 +496,82 @@ export const contact = {
     message: "Your Message",
   },
   submitLabel: "Send Message",
+  submittingLabel: "Sending...",
+  formSuccessMessage: "Thank you — your message was sent. I will get back to you soon.",
+  formErrorMessage: "Something went wrong. Please try again or email me directly.",
+  formConfigWarning:
+    "Contact form is not configured. Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in .env.local (see .env.example).",
+};
+
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string[];
+  tags?: string[];
+}
+
+export const blog = {
+  heading: "My",
+  headingAccent: "Blog",
+  subtitle: "Notes on delivery, architecture, and what I am learning.",
+  posts: [
+    {
+      slug: "building-nhs-aligned-triage",
+      title: "Building NHS-Aligned Digital Triage",
+      date: "June 2026",
+      excerpt:
+        "Why rule-based routing beats opaque AI for regulated healthcare intake — and how we structured symptom flows.",
+      tags: ["Healthcare", "Next.js"],
+      content: [
+        "Digital triage in healthcare needs to be auditable. Clinicians and patients both need to understand why a pathway was suggested — self-care, pharmacy, GP, urgent care, or emergency.",
+        "For Aegis Health we used structured questionnaires and a deterministic decision engine. The UI job was to make complex branching feel simple: clear questions, progressive disclosure, and explicit outcomes.",
+        "The lesson I keep applying elsewhere: match the UX to the risk profile of the domain. In healthcare that means transparency over black-box recommendations.",
+      ],
+    },
+    {
+      slug: "why-nextjs-for-client-work",
+      title: "Why I Use Next.js for Client Work",
+      date: "May 2026",
+      excerpt:
+        "App Router, static export options, and a single codebase for marketing pages and authenticated dashboards.",
+      tags: ["Next.js", "Freelance"],
+      content: [
+        "Most of my client projects need both public surfaces and logged-in areas. Next.js gives me React, routing, and deployment ergonomics in one stack.",
+        "For portfolios and marketing sites I lean on static generation. For LMS and CRM work I use server components and API routes where needed, with PostgreSQL and Prisma on the backend.",
+        "The payoff for clients is faster iteration: one repo, predictable hosting on Vercel or Render, and a hiring pool that already knows the framework.",
+      ],
+    },
+    {
+      slug: "learning-ai-engineering",
+      title: "Learning AI Engineering Alongside Delivery",
+      date: "April 2026",
+      excerpt:
+        "Balancing client delivery with structured learning — without shipping hype into production systems.",
+      tags: ["AI", "Career"],
+      content: [
+        "I am expanding into AI engineering while keeping production standards from full-stack work: validation, observability, and clear boundaries on what automation should decide.",
+        "Not every product needs a model. Many need better data pipelines, retrieval, or human-in-the-loop workflows. I treat AI as a tool layer, not a replacement for domain rules where regulation matters.",
+        "This blog will document that journey — practical experiments, stack choices, and how AI fits next to the CRMs, LMS platforms, and healthcare tools I already ship.",
+      ],
+    },
+  ] satisfies BlogPost[],
 };
 
 export const footer = {
-  copyright: "© 2026 Usman Nasir. All rights reserved.",
+  copyright: "© 2026 Mohammad Usman Nasir. All rights reserved.",
+  tagline: "Full-Stack & AI Engineer",
+  email: "usmannasir98@gmail.com",
+  showSocial: true,
+  builtWith: "Built with Next.js · Deployed on Vercel",
+  quickLinks: [
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+  ],
   backToTopHref: "/",
   learningJourneyHref: "/projects?filter=learning",
   learningJourneyLabel: "View learning journey",
