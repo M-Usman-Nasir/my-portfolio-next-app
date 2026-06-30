@@ -295,17 +295,18 @@ export const clientProjects = {
       problem:
         "Gym owners needed one system to replace spreadsheets and disconnected tools.",
       outcome:
-        "Delivered web CRM plus member and coach mobile apps for full operations.",
+        "Delivered web CRM and coach mobile app for end-to-end gym operations.",
       domain: "CRM",
       image: "/images/fitness-crm.png",
       url: "https://phpstack-1542257-6177868.cloudwaysapps.com/login",
       status: "live" as ProjectStatus,
-      stack: ["PHP", "Laravel", "MySQL", "Mobile"],
-      scope: "Web + 2 mobile apps",
-      role: "Full-Stack Developer",
+      stack: ["Vue.js", "Laravel", "MariaDB", "Apache", "Mobile"],
+      scope: "Web CRM + coach mobile app",
+      role: "Full-Stack Developer — Frontend, Backend & Mobile",
       contribution: [
-        "Shipped Laravel CRM modules for members, billing, and staff workflows.",
-        "Supported companion mobile apps for members and coaches.",
+        "Owned the full Vue.js frontend for the gym CRM — dashboards, member workflows, and staff operations.",
+        "Built and maintained the Laravel backend with MariaDB on Apache (Cloudways).",
+        "Delivered the coach mobile app integrated with the same API and business logic.",
       ],
     },
     {
