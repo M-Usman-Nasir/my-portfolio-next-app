@@ -4,7 +4,7 @@ Replace these placeholder files with your final designs. Paths are referenced fr
 
 | File | Spec | Used for |
 |------|------|----------|
-| `logo.svg` | Navbar/footer logo | Site header |
+| `logo.svg` | **48×48** icon mark (UN monogram) — use beside text in navbar | Site header |
 | `og-image.png` | **1200×630** PNG | WhatsApp, LinkedIn, Facebook, X preview cards |
 | `favicon.ico` | 16/32/48 multi-size | Browser tab |
 | `apple-icon.png` | **180×180** PNG | iOS home screen |

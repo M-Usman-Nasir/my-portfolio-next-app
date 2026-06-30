@@ -45,15 +45,21 @@ const Navbar = () => {
     >
       <Link href="/" className="inline-flex items-center gap-3 text-dark dark:text-white">
         {site.logoImage && !logoError ? (
-          <Image
-            src={site.logoImage}
-            alt={site.logo}
-            width={120}
-            height={40}
-            className="h-10 w-auto"
-            priority
-            onError={() => setLogoError(true)}
-          />
+          <>
+            <Image
+              src={site.logoImage}
+              alt=""
+              aria-hidden
+              width={48}
+              height={48}
+              className="h-11 w-11 shrink-0"
+              priority
+              onError={() => setLogoError(true)}
+            />
+            <span className="text-[2.2rem] md:text-[2.5rem] font-bold leading-none">
+              {site.logo}
+            </span>
+          </>
         ) : (
           <span className="text-[2.5rem] font-bold">{site.logo}</span>
         )}
